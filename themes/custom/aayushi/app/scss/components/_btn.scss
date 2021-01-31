@@ -1,0 +1,32 @@
+.btn {
+    font-weight: bolder;
+    text-transform: capitalize;
+    border-radius: 10px;
+    padding: 10px 25px;
+    
+    
+    &--primary {
+        border: 1px solid $orange-bg;
+        background-color: $white-bg;
+        
+        &:hover {
+            color: $white-text;
+            transition: 0.5s ease;
+            border-color: transparent;
+            background: linear-gradient(to left, #f90 0%, #e5322e 100%);
+        }
+    }
+
+    &--gradient {
+        color: $white-text;
+        background: linear-gradient(to right, #f90 0%, #e5322e 100%);
+
+        &:hover {
+            color: $white-text;
+            transition: 0.5s ease;
+            background: linear-gradient(to left, #f90 0%, #e5322e 100%);
+        }
+    }
+
+
+}

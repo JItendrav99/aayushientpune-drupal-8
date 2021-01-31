@@ -1,0 +1,61 @@
+/* Accordion styles */
+input[type=checkbox],
+input[type=radio] {
+    display: none;
+}
+
+.tabs {
+    overflow: hidden;
+}
+
+.tab {
+    width: 100%;
+    color: $body-text;
+    overflow: hidden;
+
+    &-label {
+        display: flex;
+        justify-content: space-between;
+        padding: 1em;
+        color: $white-text;
+        background: linear-gradient(to left, #f90 0%, #e5322e 100%);
+        font-weight: bold;
+        cursor: pointer;
+
+        /* Icon */
+        &:hover {
+            background-color: rgba(0, 0, 0, .09);
+        }
+
+        &::after {
+            content: "\276F";
+            width: 1em;
+            height: 1em;
+            text-align: center;
+            transition: all .35s;
+        }
+    }
+
+    &-content {
+        max-height: 0;
+        padding: 0 1em;
+        color: $body-text;
+        transition: all .35s;
+    }
+}
+
+// :checked
+input:checked {
+    +.tab-label {
+        background-color: rgba(0, 0, 0, .09);
+
+        &::after {
+            transform: rotate(90deg);
+        }
+    }
+
+    ~.tab-content {
+        max-height: 100vh;
+        padding: 1em;
+    }
+}

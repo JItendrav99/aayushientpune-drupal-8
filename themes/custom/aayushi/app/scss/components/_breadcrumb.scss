@@ -1,0 +1,50 @@
+.breadcrumb {
+        
+}
+
+.breadcrumb {
+    display: flex;
+    padding-left: 0px;
+    padding-right: 0px;
+    margin: 0px;
+    background-color: transparent !important;
+
+    &-item {
+        a {
+            font-family: $secondary-font;
+            color: $white-text !important;
+            @include font-size(14px);
+            text-transform: capitalize;
+        }
+    }
+    
+    li+li {
+        position: relative;
+        padding-left: 15px !important;
+
+        &:before {
+            position: absolute;
+            content: '' !important;
+            width: 8px;
+            height: 8px;
+            border-top: 1px solid #fff;
+            border-left: 1px solid #fff;
+            top: 2px;
+            bottom: 0;
+            left: 0;
+            margin-top: auto;
+            margin-bottom: auto;
+            transform: rotate(135deg);
+        }
+    }
+
+    @media (max-width: 329px) {
+        margin-bottom: 5px;
+    }
+
+    &-item.active {
+        font-size: 1rem;
+        color: $orange !important;
+        text-transform: capitalize;
+    }
+}

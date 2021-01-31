@@ -1,0 +1,111 @@
+// footer-warp
+.site-footer {
+    background-color: #292424 !important;
+    padding: 80px 0px;
+    margin-top: 160px;
+
+    &__bottom {
+        margin: 0;
+        border: none;
+    }
+
+    >.container {
+        max-width: 100% !important;
+    }
+
+    .content  {
+        a {
+            @include transition();
+
+            &:hover,
+            &:focus {
+                color: $orange;
+            }
+        }
+    }
+}
+
+.footer {
+
+    a {
+        font-family: $secondary-font;
+        color: $white-text;
+
+        &:hover {
+            color: $orange-text;
+            transition: 0.3s;
+        }
+    }
+
+    &__main-title {
+        font-family: $secondary-font;
+        @include font-size(22px);
+        margin-bottom: 20px;
+        padding-bottom: 10px;
+        text-transform: capitalize;
+
+        &:after {
+            width: 25%;
+            margin-left: 0px;
+            background-color: $white-text;
+
+            @include breakpoint(mobile-max) {
+                width: 15%;
+            }
+        }
+    }
+
+    &__contect-links,
+    &__page-links,
+    &__product-links {
+        ul {
+            display: inline-block;
+
+            li {
+                margin-bottom: 10px;
+
+                &:last-child {
+                    margin-bottom: 0px;
+                }
+            }
+        }
+
+        @include breakpoint(mobile-max) {
+            margin-top: 20px;
+        }
+    }
+
+    &__contect-links {
+        li {
+            a {
+                span {
+                    color: $orange-text;
+                    margin: 0px 10px;
+                }
+            }
+
+            &:last-child {
+                span {
+                    margin: 0px 9px;
+                }
+            }
+        }
+    }
+
+    @include breakpoint(mobile-max) {
+        padding: 40px 0px;
+        margin-top: 120px;
+    }
+}
+
+// copy-right
+.copy-right {
+    padding: 10px;
+    background-color: #1e1d1d;
+
+    p {
+        color: $white-text;
+        text-align: center;
+        @include font-size(12px);
+    }
+}
